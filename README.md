@@ -9,8 +9,9 @@ Very simple way to crypt strings (do not use to crypt sensitive data)
 `$encrypted = $sc->encrypt('TEST');
 
 #### Decrypt
-`$decrypted = $sc->decrypt($encrypted);
+`$decrypted = $sc->decrypt($encrypted);`
 
 #### Static
 `$enc = SimpleCrypt::enc('TEST');`
+
 `$dec = SimpleCrypt::dec($enc);`
