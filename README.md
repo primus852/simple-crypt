@@ -6,7 +6,7 @@ Very simple way to crypt strings (do not use to crypt sensitive data)
 `$sc = new SimpleCrypt('my-salt', 'iv');`
 
 #### Encrypt
-`$encrypted = $sc->encrypt('TEST');
+`$encrypted = $sc->encrypt('TEST');`
 
 #### Decrypt
 `$decrypted = $sc->decrypt($encrypted);`
