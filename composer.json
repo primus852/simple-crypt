@@ -1,0 +1,23 @@
+{
+  "name": "primus852/simple-crypt",
+  "version": "1.0.0",
+    "description": "Simple String Crypt",
+    "type": "package",
+    "require": {
+      "php": "^7.0"
+    },
+    "license": "GPL-3.0-or-later",
+    "authors": [
+        {
+            "name": "Torsten Wolter",
+            "email": "findnibbler@gmail.com",
+            "homepage": "https://leaguestreams.net"
+        }
+    ],
+    "minimum-stability": "dev",
+    "autoload": {
+        "psr-4": {
+            "primus852\\SimpleCrypt\\": "src/"
+        }
+    }
+}
