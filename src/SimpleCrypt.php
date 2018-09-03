@@ -1,11 +1,18 @@
 <?php
 
+namespace primus852\SimpleCrypt;
+
+use Defuse\Crypto\Crypto;
+use Defuse\Crypto\Exception\CryptoException;
+use Defuse\Crypto\Key;
+
 class SimpleCrypt
 {
 
     private $enc_method;
     private $s_key;
     private $s_iv;
+    private $ascii;
 
     /**
      * SimpleCrypt constructor.
@@ -40,6 +47,38 @@ class SimpleCrypt
     {
 
         return openssl_decrypt(base64_decode($string), $this->enc_method, $this->s_key, 0, $this->s_iv);
+
+    }
+
+    /**
+     * @param string $plain
+     * @param string $ascii
+     * @return string
+     * @throws CryptoException
+     */
+    public static function encCipher(string $plain, string $ascii){
+
+        try {
+            return Crypto::encrypt($plain, Key::loadFromAsciiSafeString($ascii), false);
+        } catch (CryptoException $e) {
+            throw new CryptoException($e->getMessage());
+        }
+
+    }
+
+    /**
+     * @param string $cipher
+     * @param string $ascii
+     * @return string
+     * @throws CryptoException
+     */
+    public static function decCipher(string $cipher, string $ascii){
+
+        try {
+            return Crypto::decrypt($cipher, Key::loadFromAsciiSafeString($ascii), false);
+        } catch (CryptoException $e) {
+            throw new CryptoException($e->getMessage());
+        }
 
     }
 

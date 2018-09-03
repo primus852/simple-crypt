@@ -15,3 +15,8 @@ Very simple way to crypt strings (do not use to crypt sensitive data)
 `$enc = SimpleCrypt::enc('TEST');`
 
 `$dec = SimpleCrypt::dec($enc);`
+
+#### Cipher ( [https://github.com/defuse/php-encryption](https://github.com/defuse/php-encryption))
+`$enc = SimpleCrypt::encCipher('TEST','MyLongASCIIKey');`
+
+`$dec = SimpleCrypt::decCipher($enc,'MyLongASCIIKey);`

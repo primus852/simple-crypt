@@ -1,10 +1,12 @@
 {
   "name": "primus852/simple-crypt",
-  "version": "1.0.0",
+  "version": "1.1.0",
     "description": "Simple String Crypt",
     "type": "package",
     "require": {
-      "php": "^7.0"
+      "php": "^7.0",
+      "ext-openssl": "*",
+      "defuse/php-encryption": "^2.1"
     },
     "license": "GPL-3.0-or-later",
     "authors": [
