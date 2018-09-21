@@ -91,7 +91,7 @@ class SimpleCrypt
      */
     public static function enc(string $string, string $key = 'salt', string $iv = 'iv', string $method = 'AES-256-CBC')
     {
-        return base64_encode(openssl_encrypt($string, $method, $key, 0, $iv));
+        return base64_encode(openssl_encrypt($string, $method, $key, 0, substr(hash('sha256', $iv), 0, 16)));
     }
 
     /**
@@ -102,7 +102,7 @@ class SimpleCrypt
      * @return string
      */
     public static function dec(string $string, string $key = 'salt', string $iv = 'iv', string $method = 'AES-256-CBC'){
-        return openssl_decrypt(base64_decode($string), $method, $key, 0, $iv);
+        return openssl_decrypt(base64_decode($string), $method, $key, 0, substr(hash('sha256', $iv), 0, 16));
     }
 
     /**
